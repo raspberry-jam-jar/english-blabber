@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import './App.css';
-import Desk from './common/Desk';
+import DeskControl from './common/Desk';
 
 
 function Header() {
@@ -26,9 +26,9 @@ function Header() {
 function UsersDashboard () {
   return (
       <div className="container">
-        <Desk title="Admins"/>
-        <Desk title="Teachers"/>
-        <Desk title="Students"/>
+        <DeskControl form_type="user" title="Admins"/>
+        <DeskControl form_type="user" title="Teachers"/>
+        <DeskControl form_type="user" title="Students"/>
       </div>
   );
 }
@@ -37,8 +37,8 @@ function UsersDashboard () {
 function ShopDashboard() {
   return(
     <div className="container">
-        <Desk title="Draft"/>
-        <Desk title="Published"/>
+        <DeskControl title="Draft"/>
+        <DeskControl title="Published"/>
     </div>
   )
 }
@@ -47,7 +47,7 @@ function ShopDashboard() {
 function GroupsDashboard() {
   return(
     <div className="container">
-        <Desk title="Group1"/>
+        <DeskControl title="Group1"/>
     </div>
   )
 }

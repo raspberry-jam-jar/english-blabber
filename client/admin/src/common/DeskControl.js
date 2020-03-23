@@ -2,11 +2,12 @@ import React from 'react';
 import ReactModal from 'react-modal';
 
 import Cart from './Cart'
+import UserForm from '../forms/UserForm'
 
 ReactModal.setAppElement('#root');
 
 
-class Desk extends React.Component {
+class DeskControl extends React.Component {
     constructor(props) {
       super(props);
       // This binding is necessary to make `this` work in the callback
@@ -28,6 +29,10 @@ class Desk extends React.Component {
     };
   
     render() {
+      let content;
+      if (this.props.form_type === "user") {
+        content = <UserForm/>;
+      };
         return (
           <div className="desk">
             <div className="desk-header">{this.props.title}</div>
@@ -35,9 +40,10 @@ class Desk extends React.Component {
             <button className="add-btn" onClick={this.handleOpenModal}>Add</button>
             <ReactModal 
              isOpen={this.state.showModal}
-             contentLabel="Minimal Modal Example"
+             contentLabel="Create"
             >
-            <button onClick={this.handleCloseModal}>Close Modal</button>
+            {content}
+            <button onClick={this.handleCloseModal}>Close</button>
           </ReactModal>
           </div>
         )
@@ -45,4 +51,4 @@ class Desk extends React.Component {
 };
 
 
-export default Desk;
+export default DeskControl;
