@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import './App.css';
-import DeskControl from './common/Desk';
+import DeskControl from './common/DeskControl';
 
 
 function Header() {
