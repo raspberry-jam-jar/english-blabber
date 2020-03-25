@@ -7,7 +7,10 @@ function UserForm () {
       <label>
         Имя:
         <input type="text" name="name" />
+        Фамилия:
+        <input type="text" name="name" />
       </label>
+      <button>Save</button>
     </form>
   );
 };
