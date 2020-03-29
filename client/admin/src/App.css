@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: grey;
+}
+.header-navigation {
+  min-width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container {
+  display: flex;
+}
+.desk {
+  margin: 20px;
+  border: 1px solid black;
+  width: 250px;
+  min-height: 600px;
+}
+.desk-header {
+  border: 1px solid black;
+  height: 50px;
+}
+.cart {
+  margin: 10px;
+  border: 1px solid black;
+  min-height: 100px;
+}
