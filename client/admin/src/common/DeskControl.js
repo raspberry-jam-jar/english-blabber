@@ -35,16 +35,24 @@ class DeskControl extends React.Component {
       };
         return (
           <div className="desk">
-            <div className="desk-header">{this.props.title}</div>
-            <Cart/>
-            <button className="add-btn" onClick={this.handleOpenModal}>Add</button>
-            <ReactModal 
-             isOpen={this.state.showModal}
-             contentLabel="Create"
-            >
-            {content}
-            <button onClick={this.handleCloseModal}>Close</button>
-          </ReactModal>
+            <div className="desk-header">
+              {this.props.title}
+            </div>
+            <div className="desk-body">
+              <Cart/>
+            </div>
+            <div className="desk-footer">
+              <a className="open-dialog-btn" onClick={this.handleOpenModal}>Добавить</a>
+              <ReactModal className="Modal"
+           overlayClassName="Overlay" isOpen={this.state.showModal} contentLabel="Create">
+                <div className="modal-container">
+                  <div className="modal-header">Добавить пользователя с ролью админ</div>
+                  {content}
+                  <a className="close-dialog-btn" onClick={this.handleCloseModal}/>
+                </div>
+              </ReactModal>
+            </div>
+            
           </div>
         )
     };

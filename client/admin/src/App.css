@@ -1,8 +1,8 @@
 .header {
   display: flex;
   justify-content: center;
-  height: 50px;
-  background-color: grey;
+  height: 40px;
+  background-color: rgb(12, 25, 49);
 }
 .header-navigation {
   min-width: 300px;
@@ -12,19 +12,132 @@
 }
 .container {
   display: flex;
+  
+}
+body {
+  background-color: #dcdddf;
 }
 .desk {
+  display: flex;
+  flex-direction: column;
   margin: 20px;
-  border: 1px solid black;
   width: 250px;
-  min-height: 600px;
+  background: white;
+  border-radius: 3px;
 }
+
 .desk-header {
-  border: 1px solid black;
-  height: 50px;
+  padding: 10px;
+  height: 20px;
+  font-weight: 700;
+}
+.desk-body {
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.desk-footer {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
 }
 .cart {
-  margin: 10px;
-  border: 1px solid black;
-  min-height: 100px;
+  border: 1px solid rgb(167, 164, 164);
+  min-height: 70px;
+  min-width: 230px;
+  border-radius: 3px;
+}
+
+.header-navigation a {
+  color: azure;
+  outline: none;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.open-dialog-btn {
+  background: rgb(15, 177, 128);
+  color: azure;
+  font-weight: 700;
+  padding: 7px;
+  min-width: 80px;
+  border-radius: 3px;
+}
+
+.open-dialog-btn:hover {
+  background: rgb(10, 138, 99);
+  cursor: pointer;
+}
+
+.header-navigation a:hover {
+  background: rgb(63, 96, 156);
+  cursor: pointer;
+}
+
+.modal-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.modal-header {
+
+  height: 20px;
+  font-weight: 700;
+}
+
+.close-dialog-btn{
+  padding: 0px;
+  /* border-radius: 50%; */
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  border-radius: 3px;
+}
+.close-dialog-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.close-dialog-btn:before, .close-dialog-btn:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 25px;
+  width: 2px;
+  background-color: #333;
+}
+.close-dialog-btn:before {
+  transform: rotate(45deg);
+}
+.close-dialog-btn:after {
+  transform: rotate(-45deg);
+}
+
+.Modal {
+  border-radius: 3px;
+  max-width: 750px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e3e6eb;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.64);
 }

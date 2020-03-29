@@ -18,7 +18,7 @@ class UserForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Пользователь сохранен: ' + this.state.firstName + this.state.secondName);
+    alert('Пользователь сохранен: ' + this.state.firstName + ' ' + this.state.secondName);
     // event.preventDefault();
   }
 
@@ -32,11 +32,10 @@ class UserForm extends React.Component {
         Фамилия:
         <input type="text" name="secondName" value={this.state.secondName} onChange={this.handleInputChange} />
       </label>
-      <input type="submit" value="Сохранить"/>
+      <button type="submit">Сохранить</button>
     </form>
     )
   }
-    
 };
 
 export default UserForm;
