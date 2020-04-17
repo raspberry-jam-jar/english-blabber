@@ -40,3 +40,21 @@ class LearningGroup(models.Model):
 
     def __str__(self):
         return self.description[:50]
+
+
+class SocialUser(models.Model):
+    code = models.CharField(
+        max_length=150, verbose_name='User id at social platform'
+    )
+    platform = models.CharField(max_length=150, default='vk')
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    datetime_created = models.DateTimeField(auto_now=True)
+
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='social_users', null=True
+    )
+
+    @property
+    def status(self):
+        return 'pending' if not self.user else 'user'

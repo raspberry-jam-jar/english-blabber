@@ -47,3 +47,12 @@ class UserAdmin(admin.ModelAdmin):
             #     )
 
         super().save_model(request, obj, form, change)
+
+
+@admin.register(m.SocialUser)
+class SocialUserAdmin(admin.ModelAdmin):
+    fields = ('first_name', 'last_name', 'user',)
+    readonly_fields = ('first_name', 'last_name',)
+
+    def has_add_permission(self, request):
+        return False
